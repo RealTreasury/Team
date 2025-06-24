@@ -201,40 +201,6 @@
             text-decoration: none !important;
         }
 
-        /* Save Button */
-        .save-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            padding: 16px 20px;
-            background: rgba(114, 22, 244, 0.95);
-            color: var(--white);
-            border: 1px solid rgba(199, 125, 255, 0.4);
-            border-radius: 50px;
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            box-shadow: 
-                0 8px 32px rgba(114, 22, 244, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: none;
-            letter-spacing: normal;
-            border: none;
-        }
-
-        .save-btn:hover { 
-            transform: translateY(-2px) scale(1.05); 
-            background: rgba(143, 71, 246, 0.95); 
-            box-shadow: 0 12px 40px rgba(114, 22, 244, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
-
         /* Typography */
         h1, h2, h3 { 
             font-weight: 800; 
@@ -579,84 +545,21 @@
         }
 
         /* Editable Content Styles */
-        [contenteditable="true"] {
             transition: all 0.3s ease;
             border-radius: 6px;
             padding: 4px 6px;
             margin: -4px -6px;
         }
 
-        [contenteditable="true"]:hover {
             background: rgba(114, 22, 244, 0.06);
             outline: 2px dashed rgba(114, 22, 244, 0.3);
         }
 
-        [contenteditable="true"]:focus {
             background: rgba(114, 22, 244, 0.1);
             outline: 2px solid rgba(114, 22, 244, 0.6);
             box-shadow: 0 0 0 4px rgba(114, 22, 244, 0.1);
         }
 
-        /* Image Editor */
-        .image-editor {
-            position: relative;
-            display: inline-block;
-        }
-
-        .edit-image-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(114, 22, 244, 0.9);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .image-editor:hover .edit-image-btn {
-            opacity: 1;
-        }
-
-        .edit-indicator {
-            position: fixed;
-            bottom: 90px;
-            left: 30px;
-            background: rgba(114, 22, 244, 0.95);
-            color: var(--white);
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 9998;
-            border: 1px solid rgba(199, 125, 255, 0.3);
-            box-shadow: 0 4px 16px rgba(114, 22, 244, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-
-        .edit-indicator:hover {
-            background: rgba(143, 71, 246, 0.95);
-            transform: translateY(-2px) scale(1.05);
-        }
-
-        .edit-indicator.edit-off {
-            background: rgba(108, 117, 125, 0.9);
-            border-color: rgba(108, 117, 125, 0.3);
-        }
-
-        .edit-indicator.edit-off:hover {
-            background: rgba(134, 142, 150, 0.95);
-        }
 
         /* Mobile Responsiveness */
         @media (max-width: 1024px) {
@@ -729,14 +632,12 @@
                 font-size: 1.3rem; 
             }
             
-            .save-btn { 
                 bottom: 20px; 
                 right: 20px; 
                 padding: 14px 18px; 
                 font-size: 0.8rem; 
             }
             
-            .edit-indicator { 
                 bottom: 85px; 
                 left: 20px; 
                 padding: 8px 14px; 
@@ -793,7 +694,6 @@
                 max-width: none;
             }
             
-            .save-btn { 
                 bottom: 15px; 
                 right: 15px; 
                 padding: 12px 16px; 
@@ -801,11 +701,9 @@
                 border-radius: 40px; 
             }
             
-            .save-btn span { 
                 display: none; 
             }
             
-            .edit-indicator { 
                 font-size: 0.7rem; 
                 padding: 6px 10px;
                 bottom: 80px;
@@ -820,23 +718,19 @@
 
         /* Print Styles */
         @media print {
-            .save-btn,
-            .edit-indicator,
-            .edit-image-btn {
                 display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <button class="edit-indicator" onclick="toggleEditMode()" id="editToggle">✏️ Edit Mode ON</button>
 
     <!-- Hero Section - Enhanced with CTA -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 contenteditable="true">Meet the Founders</h1>
-                <p class="lead" contenteditable="true">Treasury professionals who understand your challenges because we've been in your shoes.</p>
+                <h1>Meet the Founders</h1>
+                <p class="lead">Treasury professionals who understand your challenges because we've been in your shoes.</p>
                 <div class="hero-buttons">
                     <a href="#openVideoModal" class="btn btn-primary">Explore Treasury Tech Demos</a>
                     <a href="https://outlook.office.com/book/RealTreasuryMeeting@realtreasury.com/s/LgF7vpFIP0qANup2hPHi_g2?ismsaljsauthenabled" target="_blank" class="btn btn-outline">Schedule Strategy Call</a>
@@ -853,14 +747,11 @@
                 <!-- Tim's Bio -->
                 <div class="team-card">
                     <div class="team-image">
-                        <div class="image-editor">
-                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tim-Schultz-website-headshot_046.jpg" alt="Tim - Co-Founder" data-editable-image="true">
-                            <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
-                        </div>
+                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tim-Schultz-website-headshot_046.jpg" alt="Tim - Co-Founder">
                     </div>
-                    <div class="team-role" contenteditable="true">Co-Founder & PRINCIPAL Consultant</div>
-                    <h3 class="team-name" contenteditable="true">Tim</h3>
-                    <p class="team-bio" contenteditable="true">Former treasury lead with 15+ years optimizing cash management and risk operations. Tim founded Real Treasury to democratize access to treasury technology insights and help teams make confident, informed decisions without vendor bias.</p>
+                    <div class="team-role">Co-Founder & PRINCIPAL Consultant</div>
+                    <h3 class="team-name">Tim</h3>
+                    <p class="team-bio">Former treasury lead with 15+ years optimizing cash management and risk operations. Tim founded Real Treasury to democratize access to treasury technology insights and help teams make confident, informed decisions without vendor bias.</p>
                     
                     <div class="team-contact">
                         <div class="contact-row">
@@ -891,14 +782,11 @@
                 <!-- Tracey's Bio -->
                 <div class="team-card">
                     <div class="team-image">
-                        <div class="image-editor">
-                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tracey-Headshot-Website.png" alt="Tracey - Co-Founder" data-editable-image="true">
-                            <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
-                        </div>
+                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tracey-Headshot-Website.png" alt="Tracey - Co-Founder">
                     </div>
-                    <div class="team-role" contenteditable="true">Co-Founder & PRINCIPAL CONSULTANT</div>
-                    <h3 class="team-name" contenteditable="true">Tracey</h3>
-                    <p class="team-bio" contenteditable="true">Treasury operations expert specializing in system implementations and process optimization. Tracey leads client engagements and workshop facilitation, ensuring every treasury team gets the strategic support they need during technology transitions.</p>
+                    <div class="team-role">Co-Founder & PRINCIPAL CONSULTANT</div>
+                    <h3 class="team-name">Tracey</h3>
+                    <p class="team-bio">Treasury operations expert specializing in system implementations and process optimization. Tracey leads client engagements and workshop facilitation, ensuring every treasury team gets the strategic support they need during technology transitions.</p>
                     
                     <div class="team-contact">
                         <div class="contact-row">
@@ -933,9 +821,9 @@
     <section class="testimonials">
         <div class="container">
             <div class="testimonial-card">
-                <div class="testimonial-quote" contenteditable="true">"𝘈 𝘵𝘩𝘰𝘶𝘨𝘩𝘵𝘧𝘶𝘭, 𝘴𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘥 𝘱𝘳𝘰𝘤𝘦𝘴𝘴 𝘧𝘰𝘳 𝘴𝘦𝘭𝘦𝘤𝘵𝘪𝘯𝘨 𝘵𝘦𝘤𝘩𝘯𝘰𝘭𝘰𝘨𝘺…"</div>
-                <div class="testimonial-author" contenteditable="true">Tony Vu</div>
-                <div class="testimonial-role" contenteditable="true">Treasurer, Broward Health</div>
+                <div class="testimonial-quote">"𝘈 𝘵𝘩𝘰𝘶𝘨𝘩𝘵𝘧𝘶𝘭, 𝘴𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘥 𝘱𝘳𝘰𝘤𝘦𝘴𝘴 𝘧𝘰𝘳 𝘴𝘦𝘭𝘦𝘤𝘵𝘪𝘯𝘨 𝘵𝘦𝘤𝘩𝘯𝘰𝘭𝘰𝘨𝘺…"</div>
+                <div class="testimonial-author">Tony Vu</div>
+                <div class="testimonial-role">Treasurer, Broward Health</div>
             </div>
         </div>
     </section>
@@ -944,8 +832,8 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 contenteditable="true">Ready to Work Together?</h2>
-                <p class="lead" contenteditable="true">Schedule a free 15-minute strategy call to discuss your treasury technology needs, or start a quick chat to get your questions answered.</p>
+                <h2>Ready to Work Together?</h2>
+                <p class="lead">Schedule a free 15-minute strategy call to discuss your treasury technology needs, or start a quick chat to get your questions answered.</p>
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
                     <a href="https://outlook.office.com/book/RealTreasuryMeeting@realtreasury.com/s/LgF7vpFIP0qANup2hPHi_g2?ismsaljsauthenabled" target="_blank" class="btn btn-primary">Schedule a Strategy Call</a>
                     <button onclick="openTawkChat()" class="btn btn-chat">Quick Chat</button>
@@ -953,209 +841,17 @@
             </div>
         </div>
     </section>
-
-    <!-- Save Button -->
-    <button class="save-btn" onclick="saveHTML()">
-        💾 <span>Save HTML</span>
-    </button>
-
     <script>
-        // Global edit mode state
-        let editModeEnabled = true;
-
-        // Tawk.to Chat Integration
         window.openTawkChat = function() {
-            if (typeof Tawk_API !== 'undefined' && Tawk_API.maximize) {
+            if (typeof Tawk_API !== "undefined" && Tawk_API.maximize) {
                 Tawk_API.maximize();
-                console.log('Tawk chat opened');
             } else {
-                console.log('Tawk not loaded yet, opening fallback');
-                // Fallback to email if Tawk isn't loaded
-                window.location.href = 'mailto:hello@realtreasury.com?subject=Treasury Technology Inquiry';
+                window.location.href = "mailto:hello@realtreasury.com?subject=Treasury Technology Inquiry";
             }
         };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Real Treasury About/Team page loaded - Enhanced with CTA and Contact Info');
-            
-            // DEBUGGING: Test modal button detection
-            console.log('=== MODAL BUTTON DEBUG ===');
-            const modalButtons = document.querySelectorAll('a[href="#openVideoModal"]');
-            console.log('Found modal buttons:', modalButtons.length);
-            console.log('Modal buttons found:', modalButtons);
-            
-            // Test each modal button
-            modalButtons.forEach((button, index) => {
-                console.log(`Button ${index + 1}:`, button.textContent.trim(), button);
-                
-                button.addEventListener('click', function(e) {
-                    console.log('=== MODAL BUTTON CLICKED (TEAM PAGE) ===');
-                    console.log('Button text:', this.textContent.trim());
-                    console.log('Button href:', this.href);
-                    console.log('Button element:', this);
-                    console.log('Event:', e);
-                    
-                    // Check if we're in an iframe
-                    if (window !== window.parent) {
-                        console.log('We are inside an iframe - this might be the issue!');
-                        console.log('Parent window:', window.parent);
-                        
-                        // Try to trigger modal on parent window
-                        try {
-                            if (window.parent.document) {
-                                console.log('Trying to access parent window...');
-                                // Look for modal in parent window
-                                const parentModalTrigger = window.parent.document.querySelector('a[href="#openVideoModal"]');
-                                if (parentModalTrigger) {
-                                    console.log('Found modal trigger in parent, clicking it...');
-                                    e.preventDefault();
-                                    parentModalTrigger.click();
-                                    return;
-                                }
-                            }
-                        } catch (err) {
-                            console.log('Cannot access parent window (cross-origin):', err);
-                        }
-                        
-                        // Alternative: try to post message to parent
-                        try {
-                            window.parent.postMessage({ 
-                                action: 'openVideoModal',
-                                source: 'treasury-team-page'
-                            }, '*');
-                            console.log('Posted message to parent window');
-                            e.preventDefault();
-                        } catch (err) {
-                            console.log('Could not post message to parent:', err);
-                        }
-                    } else {
-                        console.log('We are in the main window');
-                    }
-                });
-            });
-            
-            // Enhanced editable element feedback
-            const editableElements = document.querySelectorAll('[contenteditable="true"]');
-            editableElements.forEach(element => {
-                element.addEventListener('focus', function() {
-                    if (editModeEnabled) {
-                        this.style.boxShadow = '0 0 0 4px rgba(114, 22, 244, 0.2)';
-                    }
-                });
-                
-                element.addEventListener('blur', function() {
-                    this.style.boxShadow = '';
-                });
-            });
-        });
-
-        // Toggle Edit Mode Function
-        function toggleEditMode() {
-            const editButton = document.getElementById('editToggle');
-            const editableElements = document.querySelectorAll('[contenteditable="true"]');
-            
-            editModeEnabled = !editModeEnabled;
-            
-            if (editModeEnabled) {
-                // Enable edit mode
-                editableElements.forEach(el => {
-                    el.setAttribute('contenteditable', 'true');
-                });
-                editButton.innerHTML = '✏️ Edit Mode ON';
-                editButton.classList.remove('edit-off');
-            } else {
-                // Disable edit mode
-                editableElements.forEach(el => {
-                    el.setAttribute('contenteditable', 'false');
-                    el.style.boxShadow = ''; // Remove any active focus styles
-                });
-                editButton.innerHTML = '👁️ Edit Mode OFF';
-                editButton.classList.add('edit-off');
-            }
-        }
-
-        // Enhanced Save Function
-        function saveHTML() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'real-treasury-about-team-enhanced.html';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
-            
-            // Enhanced feedback
-            const saveBtn = document.querySelector('.save-btn');
-            const originalHTML = saveBtn.innerHTML;
-            saveBtn.innerHTML = '✅ <span>Saved!</span>';
-            saveBtn.style.background = 'rgba(76, 175, 80, 0.95)';
-            
-            setTimeout(() => {
-                saveBtn.innerHTML = originalHTML;
-                saveBtn.style.background = 'rgba(114, 22, 244, 0.95)';
-            }, 2500);
-        }
-
-        // Image Editing Function
-        function editImage(button) {
-            if (!editModeEnabled) {
-                alert('Please enable Edit Mode to change images');
-                return;
-            }
-            
-            const img = button.previousElementSibling;
-            const currentSrc = img.src;
-            
-            const newSrc = prompt('Enter new image URL:', currentSrc);
-            if (newSrc && newSrc !== currentSrc) {
-                img.src = newSrc;
-                
-                // Show feedback
-                button.innerHTML = '✅ Updated';
-                button.style.background = 'rgba(76, 175, 80, 0.9)';
-                
-                setTimeout(() => {
-                    button.innerHTML = '✏️ Edit';
-                    button.style.background = 'rgba(114, 22, 244, 0.9)';
-                }, 2000);
-            }
-        }
-
-        // Enhanced keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-                e.preventDefault();
-                saveHTML();
-            }
-            // Toggle edit mode with Ctrl/Cmd + E
-            if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
-                e.preventDefault();
-                toggleEditMode();
-            }
-        });
-
-        // Auto-save functionality
-        let autoSaveTimer;
-        document.addEventListener('input', function(e) {
-            if (e.target.contentEditable === 'true' && editModeEnabled) {
-                clearTimeout(autoSaveTimer);
-                autoSaveTimer = setTimeout(() => {
-                    console.log('Auto-save triggered (enable by uncommenting saveHTML() below)');
-                    // saveHTML(); // Uncomment to enable auto-save
-                }, 15000); // Auto-save after 15 seconds of inactivity
-            }
-        });
-
-        // Prevent editing when edit mode is off
-        document.addEventListener('click', function(e) {
-            if (e.target.hasAttribute('contenteditable') && !editModeEnabled) {
-                e.preventDefault();
-                return false;
-            }
-        });
     </script>
+
+
     <script>
         function sendHeight() {
             const height = document.body.scrollHeight;
